@@ -31,3 +31,4 @@ for(let i=0; i < items.length; i++){
         <img src= "${items[i]}"></div>
     `
 }
+
