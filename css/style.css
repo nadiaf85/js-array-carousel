@@ -37,3 +37,31 @@
     width: 150px;
     /* position: absolute; */
 }
+
+.up{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background-color: lightgray;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    text-align: center;
+    padding: 3px;
+    transform: translate(60px);
+    top: 5px;
+}
+
+.down{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background-color: lightgray;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    text-align: center;
+    padding: 6px;
+    transform: translate(60px);
+    bottom: 5px;
+}
