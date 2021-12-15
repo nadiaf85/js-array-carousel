@@ -5,56 +5,39 @@
 }
 
 .container{
-    position: relative;
     background-color: white;
     height: 500px;
 }
 
-.immagine-grande{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    display: none;
-}
-
-.immagine-grande.active{
-    display: block;
-}
-
-.immagini-grandi, .immagini-piccole{
-    position: relative;
-}
-
-.immagine-piccola{
-    width: 100%;
+.immagini-piccole img{
     height: calc(100% / 5);
+    width: 100%;
 }
 
-.immagine-piccola img{
-    height: 100%;
+.immagini-grandi{
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.immagini-grandi img{
+    width: 50%;
+}
+
+.img-dx{
+    width: 11%;
+    position: relative;
+    left: 349px;
+}
+
+.img-sx img{
+    width: 60%;
+    height: 100%;
     object-fit: cover;
 }
-
-/* .ms_big{
-    width: 50vw;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -10%);
-}
-
-.ms_lato{
-    width: 150px;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    left: 284px;
-    top: 160px;
-} */
 
 .item{
     height: 50vh;

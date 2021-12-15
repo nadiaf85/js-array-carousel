@@ -43,28 +43,38 @@ for(let i=0; i < items.length; i++){
     `
 }
 
-// let imgActive = document.getElementById('item'+elementActive);
-// imgActive.classList.add('active');
-
 const up = document.querySelector('.up')
 const down = document.querySelector('.down')
 
 up.addEventListener('click',function(){
-    elementActive--;
-    itemActive.classList.remove('active');
-    itemActive = document.getElementById('item'+elementActive);
-    itemActive.classList.add('active');
-    if(elementActive==0){
-        up.classList.add('hidden');
+    const previousImg = document.querySelector(`.immagini-piccole` + contatore);
+    previousImg.classList.remove(`active`);
+
+
+    if(contatore == (items.length - 1)){
+        contatore = 0
+    }else {
+        contatore++
     }
+
+    const currentImg = document.querySelector(`.immagini-piccole` + contatore);
+    currentImg.classList.add(`active`);
+
+    console.log(contatore) 
 });
 
 down.addEventListener('click',function(){
-    elementActive++;
-    itemActive.classList.remove('active');
-    itemActive = document.getElementById('item'+elementActive);
-    itemActive.classList.add('active');
-    if(elementActive==imagesArray.lenght-1){
-        down.classList.add('hidden');
+    const previousImg = document.querySelector(`.immagini-piccole` + contatore);
+    previousImg.classList.remove(`active`);
+
+    if(contatore == 0){
+        contatore = (items.length - 1)
+    }else {
+        contatore--
     }
+
+    const currentImg = document.querySelector(`.immagini-piccole` + contatore);
+    currentImg.classList.add(`active`);
+
+    console.log(contatore)
 });
