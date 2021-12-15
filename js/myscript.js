@@ -32,3 +32,31 @@ for(let i=0; i < items.length; i++){
     `
 }
 
+let itemActive = document.querySelector('.ms_big');
+itemsContainer.innerHTML = itemsContent;
+
+let itemActive = document.getElementById('item'+elementActive);
+itemActive.classList.add('active');
+
+const up = document.querySelector('.up')
+const down = document.querySelector('.down')
+
+up.addEventListener('click',function(){
+    elementActive--;
+    itemActive.classList.remove('active');
+    itemActive = document.getElementById('item'+elementActive);
+    itemActive.classList.add('active');
+    if(elementActive==0){
+        up.classList.add('hidden');
+    }
+});
+
+down.addEventListener('click',function(){
+    elementActive++;
+    itemActive.classList.remove('active');
+    itemActive = document.getElementById('item'+elementActive);
+    itemActive.classList.add('active');
+    if(elementActive==imagesArray.lenght-1){
+        down.classList.add('hidden');
+        }
+});

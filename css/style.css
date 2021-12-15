@@ -35,7 +35,16 @@
 .ms_lato img{
     height: calc(100% / 5);
     width: 150px;
-    /* position: absolute; */
+}
+
+.item{
+    height: 50vh;
+    display: none;
+    overflow: hidden;
+}
+
+.item.active{
+    display: block;
 }
 
 .up{
