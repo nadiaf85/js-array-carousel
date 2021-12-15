@@ -22,21 +22,29 @@ const text = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ]
 
-//creo ciclo per inserire nell'html l'img grande
-let itemsContent = '';
+let contatore=0;
+let immaginiGrandi = document.querySelector('.immagini-grandi');
 
 for(let i=0; i < items.length; i++){
-    itemsContent += `
-    <div class="items">
+    immaginiGrandi.innerHTML += `
+    <div class="immagine-grande img-grande ${i}">
+        <img src= "${items[i]}">
+    
+    </div>
+    `
+}
+
+let immaginiPiccole = document.querySelector('.immagini-piccole');
+
+for(let i=0; i < items.length; i++){
+    immaginiPiccole.innerHTML += `
+    <div class="immagine-piccola">
         <img src= "${items[i]}"></div>
     `
 }
 
-let itemActive = document.querySelector('.ms_big');
-itemsContainer.innerHTML = itemsContent;
-
-let itemActive = document.getElementById('item'+elementActive);
-itemActive.classList.add('active');
+// let imgActive = document.getElementById('item'+elementActive);
+// imgActive.classList.add('active');
 
 const up = document.querySelector('.up')
 const down = document.querySelector('.down')
@@ -58,5 +66,5 @@ down.addEventListener('click',function(){
     itemActive.classList.add('active');
     if(elementActive==imagesArray.lenght-1){
         down.classList.add('hidden');
-        }
+    }
 });

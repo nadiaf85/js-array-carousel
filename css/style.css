@@ -1,25 +1,49 @@
 *{
     box-sizing: border-box;
     margin: 0 auto;
+    padding: 0;
 }
 
 .container{
     position: relative;
     background-color: white;
+    height: 500px;
 }
 
-.ms_big{
+.immagine-grande{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none;
+}
+
+.immagine-grande.active{
+    display: block;
+}
+
+.immagini-grandi, .immagini-piccole{
+    position: relative;
+}
+
+.immagine-piccola{
+    width: 100%;
+    height: calc(100% / 5);
+}
+
+.immagine-piccola img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* .ms_big{
     width: 50vw;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -10%);
-}
-
-.ms_big img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 
 .ms_lato{
@@ -30,12 +54,7 @@
     position: relative;
     left: 284px;
     top: 160px;
-}
-
-.ms_lato img{
-    height: calc(100% / 5);
-    width: 150px;
-}
+} */
 
 .item{
     height: 50vh;
