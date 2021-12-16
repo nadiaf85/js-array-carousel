@@ -23,23 +23,24 @@ const text = [
 ]
 
 let contatore=0;
-let immaginiGrandi = document.querySelector('.immagini-grandi');
-
+let immaginiGrandi = document.querySelector ('.immagine-grande');
+    
 for(let i=0; i < items.length; i++){
     immaginiGrandi.innerHTML += `
-    <div class="immagine-grande img-grande ${i}">
+    <div class="immagine-grande${i}">
         <img src= "${items[i]}">
     
     </div>
     `
 }
 
-let immaginiPiccole = document.querySelector('.immagini-piccole');
-
+let immaginiPiccole = document.querySelector ('.immagine-piccola');
+    
 for(let i=0; i < items.length; i++){
     immaginiPiccole.innerHTML += `
-    <div class="immagine-piccola">
-        <img src= "${items[i]}"></div>
+    <div class="immagine-piccola${i}">
+        <img src= "${items[i]}">
+    </div>
     `
 }
 
@@ -47,9 +48,8 @@ const up = document.querySelector('.up')
 const down = document.querySelector('.down')
 
 up.addEventListener('click',function(){
-    const previousImg = document.querySelector(`.immagini-piccole` + contatore);
+    const previousImg = document.querySelector(`.immagine-grande` + contatore);
     previousImg.classList.remove(`active`);
-
 
     if(contatore == (items.length - 1)){
         contatore = 0
@@ -57,14 +57,14 @@ up.addEventListener('click',function(){
         contatore++
     }
 
-    const currentImg = document.querySelector(`.immagini-piccole` + contatore);
-    currentImg.classList.add(`active`);
+    const immagineCorrente = document.querySelector(`.immagine-grande` + contatore);
+    immagineCorrente.classList.add(`active`);
 
     console.log(contatore) 
 });
 
 down.addEventListener('click',function(){
-    const previousImg = document.querySelector(`.immagini-piccole` + contatore);
+    const previousImg = document.querySelector(`.immagine-grande` + contatore);
     previousImg.classList.remove(`active`);
 
     if(contatore == 0){
@@ -73,8 +73,11 @@ down.addEventListener('click',function(){
         contatore--
     }
 
-    const currentImg = document.querySelector(`.immagini-piccole` + contatore);
-    currentImg.classList.add(`active`);
+    const immagineCorrente = document.querySelector(`.immagine-grande` + contatore);
+    immagineCorrente.classList.add(`active`);
 
-    console.log(contatore)
+    console.log(contatore);
 });
+
+const primaImg = document.querySelector(`.immagine-grande-0`);
+primaImg.classList.add(`active`);
