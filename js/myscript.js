@@ -22,62 +22,54 @@ const text = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ]
 
-let contatore=0;
-let immaginiGrandi = document.querySelector ('.immagine-grande');
-    
+let elementActive=0;
+let immaginiGrandi = '';
+
 for(let i=0; i < items.length; i++){
-    immaginiGrandi.innerHTML += `
-    <div class="immagine-grande${i}">
+    immaginiGrandi += `
+    <div class="immagine-grande" id="item-${i}">
         <img src= "${items[i]}">
     
     </div>
     `
 }
 
+let contenitore = document.querySelector ('.immagine-grande');
+contenitore.innerHTML= immaginiGrandi;
+
+
 let immaginiPiccole = document.querySelector ('.immagine-piccola');
     
 for(let i=0; i < items.length; i++){
-    immaginiPiccole.innerHTML += `
-    <div class="immagine-piccola${i}">
+    immaginiPiccole += `
+    <div class="immagine-piccola id="item-${i}">
         <img src= "${items[i]}">
     </div>
     `
 }
+
+
+let itemActive = document.getElementById('item-'+elementActive);
+itemActive.classList.add('active');
 
 const up = document.querySelector('.up')
 const down = document.querySelector('.down')
 
 up.addEventListener('click',function(){
-    const previousImg = document.querySelector(`.immagine-grande` + contatore);
-    previousImg.classList.remove(`active`);
-
-    if(contatore == (items.length - 1)){
-        contatore = 0
-    }else {
-        contatore++
+    if(elementActive !=0){
+        elementActive--;
+        itemActive.classList.remove('active');
+        itemActive=document.getElementById('item-'+elementActive);
+        itemActive.classList.add('active');
     }
-
-    const immagineCorrente = document.querySelector(`.immagine-grande` + contatore);
-    immagineCorrente.classList.add(`active`);
-
-    console.log(contatore) 
 });
 
+     
 down.addEventListener('click',function(){
-    const previousImg = document.querySelector(`.immagine-grande` + contatore);
-    previousImg.classList.remove(`active`);
-
-    if(contatore == 0){
-        contatore = (items.length - 1)
-    }else {
-        contatore--
-    }
-
-    const immagineCorrente = document.querySelector(`.immagine-grande` + contatore);
-    immagineCorrente.classList.add(`active`);
-
-    console.log(contatore);
+    if(elementActive-items.length-1){
+        elementActive++;
+        itemActive.classList.remove('active');
+        itemActive= document.getElementById('item-'+elementActive);
+        itemActive.classList.add('active');
+}
 });
-
-const primaImg = document.querySelector(`.immagine-grande-0`);
-primaImg.classList.add(`active`);
