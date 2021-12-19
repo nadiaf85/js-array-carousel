@@ -27,7 +27,7 @@ let immaginiGrandi = '';
 
 for(let i=0; i < items.length; i++){
     immaginiGrandi += `
-    <div class="immagine-grande" id="item-${i}">
+    <div class="immagine-grande item" id="item-${i}">
         <img src= "${items[i]}">
     
     </div>
@@ -66,7 +66,7 @@ up.addEventListener('click',function(){
 
      
 down.addEventListener('click',function(){
-    if(elementActive-items.length-1){
+    if(elementActive<items.length-1){
         elementActive++;
         itemActive.classList.remove('active');
         itemActive= document.getElementById('item-'+elementActive);
