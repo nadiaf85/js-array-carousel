@@ -27,9 +27,12 @@ let immaginiGrandi = '';
 
 for(let i=0; i < items.length; i++){
     immaginiGrandi += `
-    <div class="immagine-grande item" id="item-${i}">
+    <div class="grande item" id="item-${i}">
         <img src= "${items[i]}">
-    
+        <div class="text">
+            <h1>${title[i]}</h1>
+            <h2 >${text[i]}</h2>
+        </div>
     </div>
     `
 }
@@ -38,19 +41,28 @@ let contenitore = document.querySelector ('.immagine-grande');
 contenitore.innerHTML= immaginiGrandi;
 
 
-let immaginiPiccole = document.querySelector ('.immagine-piccola');
-    
+
+
+let immagini = '';
 for(let i=0; i < items.length; i++){
-    immaginiPiccole += `
-    <div class="immagine-piccola id="item-${i}">
-        <img src= "${items[i]}">
+    immagini += 
+    `<div class="piccola" >
+        <img class="pic" id="item-${i}" src= "${items[i]}">
     </div>
     `
 }
+immagini += `
+    <div class="up"><i class="fas fa-chevron-up"></i></div>
+    <div class="down"><i class="fas fa-chevron-down"></i></div>
+`
+let sideImg = document.querySelector ('.immagine-piccola');
+sideImg.innerHTML= immagini;
 
 
 let itemActive = document.getElementById('item-'+elementActive);
 itemActive.classList.add('active');
+
+
 
 const up = document.querySelector('.up')
 const down = document.querySelector('.down')
